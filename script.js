@@ -4,18 +4,19 @@ const adventurer = {
     inventory: ["sword", "portion", "artifact"],
     companion: {
         name: "Leo",
-        type: "Cat"
+        type: "Cat",
+    companion: {
+      name: "Frank",
+      type: "Flea",
+      inventory: ["small hat", "sunglasses"]
     }
+  },
+  roll(mod = 0) {
+    const result = Math.floor(Math.random() * 20) + 1 + mod;
+    console.log(`${this.name} rolled a ${result}.`);
+  }
 };
-// console.log(adventurer);
 
-for (let i = 0; i < adventurer.inventory.length; i++) {
-    console.log(`Enchanted Item ${i + 1}: ${adventurer.inventory[i]}`);
-}
-
-adventurer.companion.companion = {
-    name: "Frank",
-    type: "Flea",
-    inventory: ["small hat", "sunglasses"]
-}
-console.log(adventurer);
+// Test the roll method
+adventurer.roll();
+adventurer.roll();
